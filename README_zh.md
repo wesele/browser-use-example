@@ -61,6 +61,36 @@ python main.py
 
 浏览器将自动启动，您将看到命令提示符。浏览器窗口将打开并等待您的命令。
 
+### 命令行选项
+
+```bash
+python main.py [-h] [-m {dom,screen}] [-c COMMAND]
+
+# 选项：
+#   -h, --help            显示帮助信息
+#   -m, --mode {dom,screen}
+#                         操作模式：'dom'（仅文本）或 'screen'（带截图/视觉）
+#                         默认值：screen
+#   -c, --command COMMAND
+#                         执行单个命令并退出
+```
+
+### 示例
+
+```bash
+# 交互模式（默认）
+python main.py
+
+# 单命令模式
+python main.py -c "打开谷歌并搜索 Python"
+
+# 使用 DOM 模式（仅文本，无截图）
+python main.py -m dom
+
+# 单命令模式 + DOM 模式
+python main.py -m dom -c "当前页面标题是什么？"
+```
+
 ### 示例命令
 
 ```

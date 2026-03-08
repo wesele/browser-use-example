@@ -61,6 +61,36 @@ python main.py
 
 The browser will launch automatically and you'll see a command prompt. The browser window will open and wait for your commands.
 
+### Command Line Options
+
+```bash
+python main.py [-h] [-m {dom,screen}] [-c COMMAND]
+
+# Options:
+#   -h, --help            Show help message
+#   -m, --mode {dom,screen}
+#                         Operation mode: 'dom' (text only) or 'screen' (with screenshots/vision)
+#                         Default: screen
+#   -c, --command COMMAND
+#                         Execute a single command and exit
+```
+
+### Examples
+
+```bash
+# Interactive mode (default)
+python main.py
+
+# Single command mode
+python main.py -c "go to google.com and search for Python"
+
+# Use DOM mode (text only, no screenshots)
+python main.py -m dom
+
+# Single command with DOM mode
+python main.py -m dom -c "what is the current page title?"
+```
+
 ### Example Commands
 
 ```

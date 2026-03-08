@@ -61,6 +61,36 @@ python main.py
 
 El navegador se lanzará automáticamente y verás un símbolo del sistema. La ventana del navegador se abrirá y esperará tus comandos.
 
+### Opciones de Línea de Comandos
+
+```bash
+python main.py [-h] [-m {dom,screen}] [-c COMMAND]
+
+# Opciones:
+#   -h, --help            Mostrar mensaje de ayuda
+#   -m, --mode {dom,screen}
+#                         Modo de operación: 'dom' (solo texto) o 'screen' (con capturas/pantalla)
+#                         Por defecto: screen
+#   -c, --command COMMAND
+#                         Ejecutar un solo comando y salir
+```
+
+### Ejemplos
+
+```bash
+# Modo interactivo (por defecto)
+python main.py
+
+# Modo de comando único
+python main.py -c "ir a google.com y buscar Python"
+
+# Usar modo DOM (solo texto, sin capturas)
+python main.py -m dom
+
+# Comando único con modo DOM
+python main.py -m dom -c "¿cuál es el título de la página actual?"
+```
+
 ### Comandos de Ejemplo
 
 ```
