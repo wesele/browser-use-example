@@ -2,9 +2,14 @@
 
 [English](./README.md) | [中文](./README_zh.md) | [Español](./README_es.md)
 
-> **🤖 AI-Developed Project**: This project was entirely developed by AI,经过数十轮优化, and all bugs were finally resolved by **Gemini 3.1 Pro** to ensure excellent functionality.
+> **🤖 AI-Developed Project**: This project was entirely developed by AI, after dozens of rounds of optimization, and all bugs were finally resolved by **Gemini 3.1 Pro** to ensure excellent functionality.
 
-An interactive browser control application built on the browser-use library. Control browser automation using natural language commands.
+- The initial goal was to create a script for automatically publishing novel chapters to 番茄小说 (Fanqie Novel), which would inevitably require large language models.
+- I consulted Gemini and Grok for solutions, and chose browser-use as the open-source component. I also tried other AI browsers and plugins but was not satisfied.
+- After determining the solution, I used VSCode + KiloCode agent, with large models including GLM 4.7, Minimax 2.5, GLM 5, Step 3.5 Flash, Qwen3.5 397B/122B, etc.
+- The program was always unstable with various minor issues. Finally, I switched to Gemini 3.1 Pro, which quickly stabilized it, and I continuously added new features, mostly getting them right on the first try.
+- I am also a senior programmer (started programming in 1995), but I have never used Python, so I have never debugged a single line of code, nor have I even looked at the code much.
+- I spent about a whole day completing this project.
 
 ## Features
 
@@ -56,7 +61,11 @@ MODEL_NAME=gpt-4o
 
 Run the application:
 ```bash
+# Enter interactive mode
 python main.py
+
+# Execute a single command directly (open browser, execute command, close browser)
+python main.py -c "open google news and list top 5 news"
 ```
 
 The browser will launch automatically and you'll see a command prompt. The browser window will open and wait for your commands.
@@ -67,12 +76,12 @@ The browser will launch automatically and you'll see a command prompt. The brows
 python main.py [-h] [-m {dom,screen}] [-c COMMAND]
 
 # Options:
-#   -h, --help            Show help message
-#   -m, --mode {dom,screen}
-#                         Operation mode: 'dom' (text only) or 'screen' (with screenshots/vision)
-#                         Default: screen
-#   -c, --command COMMAND
-#                         Execute a single command and exit
+# -h, --help Show help message
+# -m, --mode {dom,screen}
+# Operation mode: 'dom' (text only) or 'screen' (with screenshots/vision)
+# Default: screen
+# -c, --command COMMAND
+# Execute a single command and exit
 ```
 
 ### Examples
@@ -82,7 +91,7 @@ python main.py [-h] [-m {dom,screen}] [-c COMMAND]
 python main.py
 
 # Single command mode
-python main.py -c "go to google.com and search for Python"
+python main.py -c "打开谷歌并搜索 Python"
 
 # Use DOM mode (text only, no screenshots)
 python main.py -m dom
@@ -181,6 +190,8 @@ python main.py -c "第一步、打开这个网页（番茄小说的小说管理�
 | Qwen3.5 27B | 🟢 Good | Medium: 2:35 |
 | Qwen3.5 122B | ✅ Pass (error fixed) | Fast: 1:25 |
 | Qwen3.5 397B | ⚠️ Barely (last step error) | Fast: 1:20 |
+
+Continuing to test Qwen3.5's 4B model
 
 ## License
 
